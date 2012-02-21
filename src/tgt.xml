@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<!-- IJS-Local configuration file -->
+<Configuration>
+	<RemoteObjects>
+   
+		<RemoteObject endpoint="Facade.Globals.StandardEntityLoader" withencryption="no" withcompression="no" type="Framework.Server.StandardBusiness.StandardEntityLoaderFacade" assembly="Framework.Server" objectmode="Singleton">
+			<RemoteServers>
+				<RemoteServer wname="*"  protocol="http" host="localhost" port="8085" path=""/>
+			</RemoteServers>
+		</RemoteObject>
+
+    <RemoteObject endpoint="Facade.IngredientCategory" withencryption="no" withcompression="no" type="Restaurant.Server.IngredientCategoryFacade" assembly="Restaurant.Server" objectmode="Singleton">
+      <RemoteServers>
+        <RemoteServer wname="*"  protocol="http" host="localhost" port="8085" path=""/>
+      </RemoteServers>
+    </RemoteObject>
+
+  </RemoteObjects>
+</Configuration>
+

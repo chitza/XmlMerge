@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15EF08CC-7DDC-42D4-986E-E1476978F061}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XmlMerge</RootNamespace>
+    <AssemblyName>XmlMerge</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandLine\Attributes\BaseOptionAttribute.cs" />
+    <Compile Include="CommandLine\Attributes\HelpOptionAttribute.cs" />
+    <Compile Include="CommandLine\Attributes\OptionArrayAttribute.cs" />
+    <Compile Include="CommandLine\Attributes\OptionAttribute.cs" />
+    <Compile Include="CommandLine\Attributes\OptionListAttribute.cs" />
+    <Compile Include="CommandLine\Attributes\ValueListAttribute.cs" />
+    <Compile Include="CommandLine\Core\ArgumentParser.cs" />
+    <Compile Include="CommandLine\Core\IArgumentEnumerator.cs" />
+    <Compile Include="CommandLine\Core\LongOptionParser.cs" />
+    <Compile Include="CommandLine\Core\OneCharStringEnumerator.cs" />
+    <Compile Include="CommandLine\Core\OptionGroupParser.cs" />
+    <Compile Include="CommandLine\Core\OptionInfo.cs" />
+    <Compile Include="CommandLine\Core\OptionMap.cs" />
+    <Compile Include="CommandLine\Core\PairT.cs" />
+    <Compile Include="CommandLine\Core\ParserState.cs" />
+    <Compile Include="CommandLine\Core\StringArrayEnumerator.cs" />
+    <Compile Include="CommandLine\Core\TargetWrapper.cs" />
+    <Compile Include="CommandLine\Parser\CommandLineOptionsBase.cs" />
+    <Compile Include="CommandLine\Parser\CommandLineParser.cs" />
+    <Compile Include="CommandLine\Parser\CommandLineParserException.cs" />
+    <Compile Include="CommandLine\Parser\CommandLineParserSettings.cs" />
+    <Compile Include="CommandLine\Parser\ICommandLineParser.cs" />
+    <Compile Include="CommandLine\Parser\PostParsingState.cs" />
+    <Compile Include="CommandLine\Text\CopyrightInfo.cs" />
+    <Compile Include="CommandLine\Text\FormatOptionHelpTextEventArgs.cs" />
+    <Compile Include="CommandLine\Text\HeadingInfo.cs" />
+    <Compile Include="CommandLine\Text\HelpText.cs" />
+    <Compile Include="CommandLine\Utility\Assumes.cs" />
+    <Compile Include="CommandLine\Utility\ReflectionUtil.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="merge.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tgt.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

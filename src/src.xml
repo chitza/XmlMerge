@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<!-- IJS-Local configuration file -->
+<Configuration>
+	<RemoteObjects>
+   
+    <RemoteObject endpoint="Facade.Recipe" withencryption="no" withcompression="no" type="Restaurant.Server.RecipeFacade" assembly="Restaurant.Server" objectmode="Singleton">
+      <RemoteServers>
+        <RemoteServer wname="*"  protocol="http" host="localhost" port="8085" path=""/>
+      </RemoteServers>
+    </RemoteObject>
+    
+  </RemoteObjects>
+</Configuration>
+
