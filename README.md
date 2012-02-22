@@ -10,7 +10,7 @@ Work in progress!
 
 Suppose we want to add a new book to the following "book store":
 	
-	bookstore.xml
+### File `bookstore.xml`
 
 	<?xml version="1.0"?>
 	<bookstore>
@@ -38,7 +38,7 @@ Suppose we want to add a new book to the following "book store":
 		
 	</bookstore>
 
-	newbook.xml
+### File `newbook.xml`
 	
 	<?xml version="1.0"?>
 	<bookstore>
@@ -57,6 +57,9 @@ Suppose we want to add a new book to the following "book store":
 		-s[ource] newbook.xml -m "bookstore/book" 
 		-t[arget] bookstore.xml -n "bookstore/book[last()]" 
 		-o[utput] books_updated.xml
+
+	
+### File `books_updated.xml`
 
 	<?xml version="1.0"?>
 	<bookstore>
