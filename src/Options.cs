@@ -47,10 +47,12 @@ namespace XmlMerge
             help.AdditionalNewLineAfterOption = true;
             help.Copyright = new CopyrightInfo("Chitza", 2012, 2012);
             this.HandleParsingErrorsInHelp(help);
-            help.AddPreOptionsLine("This is free software. You may redistribute copies of it under the terms of");
-            help.AddPreOptionsLine("the MIT License <http://www.opensource.org/licenses/mit-license.php>.");
-            help.AddPreOptionsLine("Usage: " + Constants.AppName + " -s Source.xml -sx /xpath/to/nodes/to/select -t Target.xml -tx /xpath/to/insert/location -o Output.xml");
-            help.AddOptions(this);
+
+			help.AddPreOptionsLine(@"Usage: " + Constants.AppName);
+			help.AddPreOptionsLine(@"        -s Source.xml -m /xpath/to/nodes/to/select");
+			help.AddPreOptionsLine(@"        -t Target.xml -n /xpath/to/insert/location");
+			help.AddPreOptionsLine(@"        -o Output.xml");
+			help.AddOptions(this);
 
             return help;
         }

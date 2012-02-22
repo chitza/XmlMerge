@@ -21,9 +21,8 @@ namespace XmlMerge
                 Environment.Exit(1);
             }
 
-            Merge(options);
-
-            Environment.Exit(0);
+            bool success = Merge(options);
+			Environment.Exit(success ? 0 : 1);
         }
 
         private static bool Merge(Options options)
