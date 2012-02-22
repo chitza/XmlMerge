@@ -1,6 +1,6 @@
 # Overview
 
-This projects aims at mergin content from various XML files, based on XPath queries.
+This projects aims at merging content from various XML files, based on XPath queries.
 
 # Status
 
