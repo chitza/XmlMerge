@@ -36,6 +36,11 @@ namespace XmlMerge
                HelpText = "Output XML file.")]
         public string OutputFile = String.Empty;
 
+		[Option("k", "sKip existing nodes",
+			   Required = false,
+			   HelpText = "Skip nodes that already exist in target document.")]
+		public bool SkipExistingNodes = true;
+
         #endregion
 
         #region Specialized Option Attribute

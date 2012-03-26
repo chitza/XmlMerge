@@ -6,6 +6,7 @@ using CommandLine;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using System.Xml;
+using System.Diagnostics;
 
 namespace XmlMerge
 {
@@ -21,7 +22,10 @@ namespace XmlMerge
                 Environment.Exit(1);
             }
 
+			//while (!Debugger.IsAttached);
             bool success = Merge(options);
+			if (success)
+				Console.WriteLine("Merge successfull");
 			Environment.Exit(success ? 0 : 1);
         }
 
@@ -66,7 +70,6 @@ namespace XmlMerge
                 return succes;
             }
 
-           
             XmlNode targetNode = null;
             try
             {
@@ -84,10 +87,17 @@ namespace XmlMerge
                 return succes;
             }
 
+			var targetBrothers = targetNode.ParentNode.ChildNodes.OfType<XmlNode>();
+
             foreach(XmlNode node in sourceNodes) 
             {
                 try
                 {
+					if (options.SkipExistingNodes)
+					{
+						if (targetBrothers.Any(b => b.OuterXml.ToLower() == node.OuterXml.ToLower()))
+							Console.WriteLine(string.Format("\tSkipping node '{0}'", node.OuterXml));
+					}
                     XmlNode importedNode = doc2.ImportNode(node, true);
                     targetNode.ParentNode.AppendChild(importedNode);
                 }

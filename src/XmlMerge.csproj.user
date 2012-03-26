@@ -4,6 +4,6 @@
     <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <StartArguments>-s src.xml -m "Configuration/RemoteObjects/RemoteObject" -t tgt.xml -n "Configuration/RemoteObjects/RemoteObject[last()]" -o out.xml</StartArguments>
+    <StartArguments>-s src.xml -m "Configuration/RemoteObjects/RemoteObject" -t tgt.xml -n "Configuration/RemoteObjects/RemoteObject[last()]" -o tgt.xml</StartArguments>
   </PropertyGroup>
 </Project>
